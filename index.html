@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="h-screen w-screen relative bg-slate-900">
+      <div
+        class="min-w-sm bg-slate-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg p-4"
+      >
+        <h1 class="w-xl text-3xl text-black font-bold text-center mb-4">
+          Quiz App
+        </h1>
+
+        <div class="flex justify-center items-start flex-col gap-2">
+          <div
+            data-id="progress-bar"
+            class="hidden w-sm bg-black mx-auto my-4 rounded-full"
+          >
+            <div
+              data-id="progress-bar-visual"
+              class="h-4 bg-white rounded-full w-0 transition-all"
+            ></div>
+          </div>
+          <div
+            data-id="question-container"
+            class="hidden flex flex-col w-full min-h-[250px]"
+          >
+            <div
+              data-id="end-timer"
+              class="hidden h-8 w-8 rounded-full bg-black self-end mb-2 text-md text-white flex justify-center items-center"
+            ></div>
+            <p data-id="question" class="text-xl mb-2"></p>
+            <ul data-id="options"></ul>
+            <button
+              id="next-question-btn"
+              class="hidden px-2 py-1 rounded-sm bg-slate-200 active:scale-95 hover:bg-slate-300 font-semibold mt-4 mx-auto"
+            >
+              Next Question
+            </button>
+            <button
+              id="end-quiz"
+              class="hidden px-2 py-1 rounded-sm bg-slate-200 active:scale-95 hover:bg-slate-300 font-semibold mt-4 mx-auto"
+            >
+              End Quiz
+            </button>
+          </div>
+          <div
+            data-id="score"
+            class="hidden self-center flex flex-col justify-center gap-2"
+          >
+            <p class="text-xl text-black font-black">
+              Your Score: <span data-id="score-value">0</span>
+            </p>
+            <button
+              id="restart-btn"
+              class="px-2 py-1 rounded-sm bg-slate-200 active:scale-95 hover:bg-slate-300 font-semibold"
+            >
+              Restart Quiz
+            </button>
+          </div>
+          <button
+            type="button"
+            id="start-btn"
+            class="px-2 py-1 rounded-sm bg-slate-200 active:scale-95 hover:bg-slate-300 font-semibold self-center"
+          >
+            Start Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
