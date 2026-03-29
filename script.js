@@ -156,8 +156,8 @@ function calcProgress() {
 function handelTimeout() {
   validAnswer(prevAnswer);
   prevAnswer = null;
-  calcProgress();
   currentQuesIndex++;
+  calcProgress();
   if (currentQuesIndex > techQuiz.length - 1) showResults();
   else showQuestions();
 }
